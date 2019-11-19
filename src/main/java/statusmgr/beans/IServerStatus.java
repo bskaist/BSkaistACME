@@ -1,5 +1,8 @@
 package statusmgr.beans;
 
+/**
+ * The interface for all ServerStatus objects
+ */
 public interface IServerStatus {
     public long getId();
 

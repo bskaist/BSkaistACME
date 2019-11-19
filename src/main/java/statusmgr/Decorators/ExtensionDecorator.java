@@ -1,5 +1,8 @@
 package statusmgr.Decorators;
 
+/**
+ * A decorator for the serverStatus class but also contains an extensions status
+ */
 import statusmgr.beans.IServerStatus;
 
 public class ExtensionDecorator extends ServerStatusDecorator {

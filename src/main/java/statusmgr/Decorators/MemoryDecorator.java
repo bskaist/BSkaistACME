@@ -1,5 +1,8 @@
 package statusmgr.Decorators;
 
+/**
+ * A decorator for the serverStatus class but also contains a memory status
+ */
 import statusmgr.beans.IServerStatus;
 
 public class MemoryDecorator  extends ServerStatusDecorator {

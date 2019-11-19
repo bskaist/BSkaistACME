@@ -55,6 +55,7 @@ public class StatusController {
 
         for (String s : details) {
             if (s.equals("operations")) {
+                System.out.println(ssd);
                 ssd = new OperationsDecorator(ssd);
             } else if (s.equals("extensions")) {
                 ssd = new ExtensionDecorator(ssd);

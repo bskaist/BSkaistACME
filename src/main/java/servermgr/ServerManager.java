@@ -1,7 +1,5 @@
 package servermgr;
 
-import statusmgr.Decorators.ServerManagerDecorator;
-
 /**
  * Manage all servers (service providers) being tracked by the Acme server tracking system
  * For now just some simple static methods for use in school project

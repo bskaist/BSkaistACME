@@ -1,5 +1,9 @@
 package statusmgr.Decorators;
 
+/**
+ * A decorator that is an abstract class containing a reference to an interface that will
+ * all the ServerStatus objects
+ */
 import statusmgr.beans.IServerStatus;
 
 
