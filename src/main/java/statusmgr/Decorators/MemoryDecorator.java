@@ -3,6 +3,7 @@ package statusmgr.Decorators;
 /**
  * A decorator for the serverStatus class but also contains a memory status
  */
+import servermgr.ServerManager;
 import statusmgr.beans.IServerStatus;
 
 public class MemoryDecorator  extends ServerStatusDecorator {
@@ -23,6 +24,6 @@ public class MemoryDecorator  extends ServerStatusDecorator {
 
     @Override
     public String getStatusDesc() {
-        return super.getStatusDesc() + ", and its memory is Running low";
+        return super.getStatusDesc() + ServerManager.getCurrentMemoryStatus();
     }
 }

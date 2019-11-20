@@ -3,6 +3,7 @@ package statusmgr.Decorators;
 /**
  * A decorator for the serverStatus class but also contains an extensions status
  */
+import servermgr.ServerManager;
 import statusmgr.beans.IServerStatus;
 
 public class ExtensionDecorator extends ServerStatusDecorator {
@@ -10,6 +11,7 @@ public class ExtensionDecorator extends ServerStatusDecorator {
     public ExtensionDecorator(IServerStatus serverStatusToBeDecorated) {
         super(serverStatusToBeDecorated);
     }
+
 
     @Override
     public long getId() {
@@ -23,7 +25,6 @@ public class ExtensionDecorator extends ServerStatusDecorator {
 
     @Override
     public String getStatusDesc() {
-        return super.getStatusDesc() + ", and is using these extensions" +
-                " - [Hypervisor, Kubernetes, RAID-6]";
+        return super.getStatusDesc() + ServerManager.getCurrentExtensionsStatus();
     }
 }

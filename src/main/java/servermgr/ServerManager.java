@@ -14,6 +14,18 @@ public class ServerManager {
     static public String getCurrentServerStatus() {
         return "Server is up";
     }
+    static public String getCurrentOperationStatus() {
+        return ", and is operating normally";
+    }
+
+    static public String getCurrentExtensionsStatus() {
+        return ", and is using these extensions - [Hypervisor, Kubernetes, RAID-6]";
+    }
+
+    static public String getCurrentMemoryStatus() {
+        return ", and its memory is Running low";
+    }
+
 
     /**
      * Find out if this server is operating normally

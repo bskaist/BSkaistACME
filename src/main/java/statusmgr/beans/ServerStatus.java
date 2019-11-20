@@ -6,7 +6,7 @@ import statusmgr.Decorators.ServerStatusDecorator;
 import java.util.List;
 
 /**
- * A POJO that represents Server Status and can be used to generate JSON for that status
+ * The basic implementaion of the IServerStatus
  */
 public class ServerStatus implements IServerStatus {
 

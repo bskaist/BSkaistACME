@@ -3,6 +3,7 @@ package statusmgr.Decorators;
 /**
  * A decorator for the serverStatus class but also contains an operations status
  */
+import servermgr.ServerManager;
 import statusmgr.beans.IServerStatus;
 
 public class OperationsDecorator extends ServerStatusDecorator {
@@ -23,6 +24,6 @@ public class OperationsDecorator extends ServerStatusDecorator {
 
     @Override
     public String getStatusDesc() {
-        return super.getStatusDesc() + ", and is operating normally";
+        return super.getStatusDesc() + ServerManager.getCurrentOperationStatus();
     }
 }
