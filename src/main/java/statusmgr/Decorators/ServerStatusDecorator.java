@@ -25,7 +25,7 @@ public abstract class ServerStatusDecorator implements IServerStatus {
         return serverStatusToBeDecorated.getContentHeader();
     }
 
-    @Override
+@Override
     public String getStatusDesc() {
         return serverStatusToBeDecorated.getStatusDesc();
     }
