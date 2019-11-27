@@ -1,10 +1,10 @@
-package statusmgr.Decorators;
+package com.acme.statusmgr.Decorators;
 
 /**
  * A decorator for the serverStatus class but also contains an operations status
  */
-import servermgr.ServerManager;
-import statusmgr.beans.IServerStatus;
+import com.acme.servermgr.ServerManager;
+import com.acme.statusmgr.beans.IServerStatus;
 
 public class OperationsDecorator extends ServerStatusDecorator {
 
