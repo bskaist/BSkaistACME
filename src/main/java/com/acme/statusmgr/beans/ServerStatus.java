@@ -1,9 +1,6 @@
-package statusmgr.beans;
+package com.acme.statusmgr.beans;
 
-import servermgr.ServerManager;
-import statusmgr.Decorators.ServerStatusDecorator;
-
-import java.util.List;
+import com.acme.servermgr.ServerManager;
 
 /**
  * The basic implementaion of the IServerStatus

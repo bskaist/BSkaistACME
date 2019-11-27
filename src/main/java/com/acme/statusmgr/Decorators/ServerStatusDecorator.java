@@ -1,10 +1,10 @@
-package statusmgr.Decorators;
+package com.acme.statusmgr.Decorators;
 
 /**
  * A decorator that is an abstract class containing a reference to an interface that will
  * all the ServerStatus objects
  */
-import statusmgr.beans.IServerStatus;
+import com.acme.statusmgr.beans.IServerStatus;
 
 
 public abstract class ServerStatusDecorator implements IServerStatus {
