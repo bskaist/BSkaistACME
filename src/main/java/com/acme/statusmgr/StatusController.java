@@ -3,6 +3,9 @@ package com.acme.statusmgr;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.acme.statusmgr.simpleDecorators.SimpleExtensionDecorator;
+import com.acme.statusmgr.simpleDecorators.SimpleMemoryDecorator;
+import com.acme.statusmgr.simpleDecorators.SimpleOperationsDecorator;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 import com.acme.statusmgr.Decorators.ExtensionDecorator;
@@ -48,19 +51,36 @@ public class StatusController {
 
     @RequestMapping(value = "/status/detailed")
     public IServerStatus printStatusDetailed(@RequestParam(value = "name", defaultValue = "Anonymous") String name,
-                                             @RequestParam(value = "details") List<String> details) {
+                                             @RequestParam(value = "details") List<String> details,
+                                             @RequestParam(value = "levelOfDetail", defaultValue = "complex") String level) {
         System.out.println("*** DEBUG INFO ***");
+
+        if(!(level.equals("complex") || level.equals("simple"))){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
 
         IServerStatus ssd = new ServerStatus(counter.incrementAndGet(), String.format(template, name));
 
         for (String s : details) {
             if (s.equals("operations")) {
-                System.out.println(ssd);
-                ssd = new OperationsDecorator(ssd);
+                if(level.equals("simple")){
+                    ssd = new SimpleOperationDetail(ssd);
+                }else{
+                    ssd = new SimpleOperationDetail(ssd);
+                }
             } else if (s.equals("extensions")) {
-                ssd = new ExtensionDecorator(ssd);
+                if(level.equals("simple")){
+                    ssd = new SimpleExtensionDetail(ssd);
+                }else{
+                    ssd = new ComplexExtensionDetail(ssd);
+                }
             } else if (s.equals("memory")) {
-                ssd = new MemoryDecorator(ssd);
+                if(level.equals("simple")){
+                    ssd = new SimpleMemoryDetail(ssd);
+                }else{
+                    ssd = new ComplexMemoryDetail(ssd);
+                }
+
             } else {
                 System.out.println("errorOverhere!");
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
