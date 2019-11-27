@@ -1,10 +1,6 @@
-package servermgr;
+package com.acme.servermgr;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Implement a 'real' server monitor, that gives back results that may differ from what unit tests expect.
