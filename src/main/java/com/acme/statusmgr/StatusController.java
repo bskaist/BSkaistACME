@@ -1,15 +1,15 @@
-package statusmgr;
+package com.acme.statusmgr;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
-import statusmgr.Decorators.ExtensionDecorator;
-import statusmgr.Decorators.MemoryDecorator;
-import statusmgr.Decorators.OperationsDecorator;
-import statusmgr.beans.IServerStatus;
-import statusmgr.beans.ServerStatus;
+import com.acme.statusmgr.Decorators.ExtensionDecorator;
+import com.acme.statusmgr.Decorators.MemoryDecorator;
+import com.acme.statusmgr.Decorators.OperationsDecorator;
+import com.acme.statusmgr.beans.IServerStatus;
+import com.acme.statusmgr.beans.ServerStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
