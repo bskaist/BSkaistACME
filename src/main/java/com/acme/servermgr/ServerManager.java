@@ -1,10 +1,17 @@
 package com.acme.servermgr;
 
+import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Manage all servers (service providers) being tracked by the Acme server tracking system
  * For now just some simple static methods for use in school project
  */
 public class ServerManager {
+
+    /**
+     * Reference to a class that knows how to get details about what we are interested in on a server
+     */
+    @Autowired
+    private IMonitorableServer monitor;
 
     /**
      * Get the status of this server
