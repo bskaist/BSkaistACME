@@ -5,12 +5,12 @@ import com.acme.statusmgr.beans.IServerStatus;
 import com.acme.statusmgr.simpleDecorators.SimpleOperationsDecorator;
 
 public class SimpleOperationDetail extends Detail  {
-    public SimpleOperationDetail(ServerStatusDecorator ssd) {
-        super(ssd);
-    }
+
+    IServerStatus ssd;
 
     public SimpleOperationDetail(IServerStatus ssd) {
         super(ssd);
+        this.ssd = ssd;
     }
 
     @Override
@@ -18,4 +18,18 @@ public class SimpleOperationDetail extends Detail  {
         return new SimpleOperationsDecorator(ssd);
     }
 
+    @Override
+    public long getId() {
+        return new SimpleOperationsDecorator(ssd).getId();
+    }
+
+    @Override
+    public String getContentHeader() {
+        return new SimpleOperationsDecorator(ssd).getContentHeader();
+    }
+
+    @Override
+    public String getStatusDesc() {
+        return new SimpleOperationsDecorator(ssd).getStatusDesc();
+    }
 }

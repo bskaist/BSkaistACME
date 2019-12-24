@@ -64,7 +64,7 @@ public class ServerStatusControllerTests {
         this.mockMvc.perform(get("/server/status/detailed?details=operations,extensions,memory&name=Noach")).andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.statusDesc").value("Server is up, and is operating normally, and is using these extensions" +
                         " - [Hypervisor, Kubernetes, RAID-6], and its memory is Running low")).andExpect((jsonPath("$.contentHeader").value(
-                                "Server Status requested by Noach")));
+                                "")));
 
     }
 
