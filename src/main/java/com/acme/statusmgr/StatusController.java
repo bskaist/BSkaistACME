@@ -66,7 +66,7 @@ public class StatusController {
                 if(level.equals("simple")){
                     ssd = new SimpleOperationDetail(ssd);
                 }else{
-                    ssd = new SimpleOperationDetail(ssd);
+                    ssd = new ComplexOperationDetail(ssd);
                 }
             } else if (s.equals("extensions")) {
                 if(level.equals("simple")){
@@ -86,8 +86,10 @@ public class StatusController {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
             }
         }
-
         return ssd;
-
+    }
+    @RequestMapping(value = "/disk/status")
+    public DiskStatus getDiskStatus(@RequestParam(value="name", defaultValue="Anonymous") String name) {
+        return new DiskStatus(counter.incrementAndGet(), String.format(template, name));
     }
 }
