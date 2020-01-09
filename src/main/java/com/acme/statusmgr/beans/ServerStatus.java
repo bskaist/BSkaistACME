@@ -37,7 +37,6 @@ public class ServerStatus implements IServerStatus {
 
     @Override
     public String getContentHeader() {
-
         return contentHeader;
     }
 

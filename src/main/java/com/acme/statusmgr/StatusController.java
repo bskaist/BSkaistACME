@@ -3,6 +3,9 @@ package com.acme.statusmgr;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.acme.statusmgr.commands.GetContentHeader;
+import com.acme.statusmgr.commands.GetIdCommand;
+import com.acme.statusmgr.commands.GetStatusDesc;
 import com.acme.statusmgr.simpleDecorators.SimpleExtensionDecorator;
 import com.acme.statusmgr.simpleDecorators.SimpleMemoryDecorator;
 import com.acme.statusmgr.simpleDecorators.SimpleOperationsDecorator;
