@@ -4,7 +4,7 @@ package com.acme.statusmgr;
 import com.acme.statusmgr.commands.Command;
 
 /**
- * Inkoer is used to execute commands
+ * Invoker is used to execute commands
  */
 
 public class Invoker {

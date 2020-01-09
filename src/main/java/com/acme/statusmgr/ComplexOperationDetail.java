@@ -4,10 +4,16 @@ package com.acme.statusmgr;
 import com.acme.statusmgr.Decorators.OperationsDecorator;
 import com.acme.statusmgr.Decorators.ServerStatusDecorator;
 import com.acme.statusmgr.beans.IServerStatus;
+import com.acme.statusmgr.commands.*;
+
+/**
+ * class uses factory to add details to object
+ */
 
 public class ComplexOperationDetail extends Detail {
 
     IServerStatus ssd;
+    Invoker invoker = new Invoker();
 
     public ComplexOperationDetail(IServerStatus ssd) {
         super(ssd);
@@ -21,17 +27,20 @@ public class ComplexOperationDetail extends Detail {
 
     @Override
     public long getId() {
-        return new OperationsDecorator(ssd).getId();
+        Command getIdCommand = new GetIdCommand(new OperationsDecorator(ssd));
+        return (long) invoker.execute(getIdCommand);
     }
 
     @Override
     public String getContentHeader() {
-        return new OperationsDecorator(ssd).getContentHeader();
+        Command getContentHeaderCommand = new GetContentHeader(new OperationsDecorator(ssd));
+        return (String) invoker.execute(getContentHeaderCommand);
     }
 
     @Override
     public String getStatusDesc() {
-        return new OperationsDecorator(ssd).getStatusDesc();
+        Command getStatusDescCommand = new GetStatusDesc(new OperationsDecorator(ssd));
+        return (String) invoker.execute(getStatusDescCommand);
     }
 }
 

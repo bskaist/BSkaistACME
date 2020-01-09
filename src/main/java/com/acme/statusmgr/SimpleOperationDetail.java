@@ -8,6 +8,10 @@ import com.acme.statusmgr.commands.GetIdCommand;
 import com.acme.statusmgr.commands.GetStatusDesc;
 import com.acme.statusmgr.simpleDecorators.SimpleOperationsDecorator;
 
+/**
+ * class uses factory to add details to object
+ */
+
 public class SimpleOperationDetail extends Detail  {
 
     IServerStatus ssd;
